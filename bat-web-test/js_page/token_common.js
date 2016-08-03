@@ -1,14 +1,27 @@
 function token_common(url) {
-	this.url = url;
+	/*
+	var tokenUrl = "http://wuzl-PC:8087/token/doServiceTest.do ";
+	tokenUrl="http://121.43.160.149:8989/token/doServiceTest.do ";
+	tokenUrl="http://127.0.0.1:8087/token/doServiceTest.do ";
+	  */
+
+	this.url = url || "http://wuzl-PC:8087/token/doServiceTest.do";
 	this.token;
 	this.requestData = {
 		login: "com.bat.shop.token.user.login",
-		sign: "com.bat.shop.token.utils.sign",
 		buy: "com.bat.shop.token.pay.buy",
 		aliH5: "com.bat.shop.token.pay.h5alipay",
 		production: "com.bat.shop.token.pay.production",
 		confirm: "com.bat.shop.token.pay.confirm",
-		refund: "com.bat.shop.token.pay.refund"
+		refund: "com.bat.shop.token.pay.refund",
+		sms: "com.bat.shop.token.sms"
+	}
+
+	this.sms = function(mobile) {
+		var smsSend = this.getSendData("sms", {
+			mobile: mobile
+		});
+		$.post(this.url, smsSend);
 	}
 
 	/*退款*/

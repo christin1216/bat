@@ -1,12 +1,9 @@
-var tokenUrl = "http://wuzl-PC:8080/token/doServiceTest.do ";
-//	tokenUrl="http://121.43.160.149:8989/token/doServiceTest.do ";
-//	tokenUrl="http://127.0.0.1:8087/token/doServiceTest.do ";
-var token_common = new token_common(tokenUrl);
+var token_common = new token_common();
 var mobile = "15083809587 ";
 var loginPwd = "123456";
 var payPwd = "123456";
-var orderId = "20160803_111"
-var money = "0.01";
+var orderId = "20160803_116"
+var money = "0.02";
 var subject = "test1";
 
 function buy() {
