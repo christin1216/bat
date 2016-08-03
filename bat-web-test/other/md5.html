@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQuery.md5.js"></script>
+<title>Insert title here</title>
+</head>
+	   <script type="text/javascript">
+			function md5test(txt){
+				var x="~t@a!b#-1?bB[/aT/%$#g^hw1;2'8^"
+				var md5=$.md5(txt+x);
+				return md5;
+			}
+	   
+			$(function(){
+				var txt=123456;
+				var md5=md5test(txt);
+				console.log(md5);
+				
+				var md52=$.md5(txt);
+				console.log(md52);
+			})
+    </script>
+<body >
+	
+	
+	
+</body>
+</html>

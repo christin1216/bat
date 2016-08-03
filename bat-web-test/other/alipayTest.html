@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQuery.md5.js"></script>
+<title>Insert title here</title>
+</head>
+	   <script type="text/javascript">
+      
+		$(function(){
+			url="http://127.0.0.1:8080/alipay/ailpayPage.do?";
+			data="money=18.8&orderId=1469689217720&subject=双人充气船橡皮艇加厚皮划艇 橡胶钓鱼船皮筏艇 捕鱼气垫（军绿色）";
+			var md52=$.md5(data);
+			data+="&sign="+md52;
+			//data="98b533add107cd76d59c42a923b31371";
+			window.location.href =url+data;
+		})
+		
+		 
+    </script>
+<body >
+	<div id="divTest">
+	
+	</div>
+
+</body>
+</html>

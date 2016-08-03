@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQuery.md5.js"></script>
+<title>Insert title here</title>
+</head>
+	   <script type="text/javascript">
+		var orderId=2016080209;
+		var money=1;
+		
+		function buy(){
+			var url="http://localhost:8080/walletpay/createPayBuyToBAT.do";
+			var d={
+				money:money,
+				payType:"购物",
+				orderId:orderId
+			}
+			d.sign=$.md5("money="+money+"&orderId="+orderId+"&payType=购物");
+			d.pwd="123456";
+			$.post(url,d,function(data){
+				
+			})
+		}
+		
+		function send(){
+			var url="http://localhost:8080/walletpay/createPayBATToseller.do";
+			var d={
+				money:money,
+				orderId:orderId
+			}
+			d.sign=$.md5("money="+money+"&orderId="+orderId);
+			d.pwd="123456";
+			$.post(url,d,function(data){
+				
+			})
+		}
+		
+		function over(){
+			var url="http://localhost:8080/walletpay/createPaySellerToSeller.do";
+			var d={
+				orderId:orderId
+			}
+			d.sign=$.md5(orderId);
+			d.pwd="123456";
+			$.post(url,d,function(data){
+				
+			})
+			
+		}
+	
+		function tui(){
+			var url="http://localhost:8080/walletpay/createAndDealPayRefund.do";
+			var d={
+				orderId:orderId,
+				money:money
+			}
+			d.sign=$.md5("money=123&orderId="+orderId);
+			d.pwd="123456";
+			$.post(url,d,function(data){
+				
+			})
+		}
+	
+		
+		$(function(){
+			//buy();
+		})
+    </script>
+<body >
+	<input type="button" onclick="buy()" value="购买 消费者">
+
+	<input type="button" onclick="send()" value="生产发货 生产者">
+
+	<input type="button" onclick="over()" value="收货 消费者">
+			
+	<input type="button" onclick="tui()" value="退款" >
+
+	
+</body>
+</html>

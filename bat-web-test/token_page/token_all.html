@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js_common/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js_common/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js_common/json2.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="../js_page/token_common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js_page/token_all.js" type="text/javascript" charset="utf-8"></script>
+		<title>Insert title here</title>
+	</head>
+	<script type="text/javascript ">
+		$(function() {
+			token_common.login(mobile, loginPwd);
+		})
+	</script>
+
+	<body>
+
+		<input type="button" onclick="buy()" value="手机购买-钱包 ">
+
+		<input type="button" onclick="h5page()" value="手机购买-支付宝 ">
+
+		<input type="button" onclick="sellerOk()" value="手机购买-生产者确认生产 ">
+
+		<input type="button" onclick="sellerOk()" value="手机购买-消费者收货确认付款 ">
+
+		<div id="div_test">
+
+		</div>
+	</body>
+
+</html>
